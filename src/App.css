@@ -3,6 +3,36 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background-color: #223c53;
+}
+
+/* CSS HOME */
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  width: 414px;
+}
+
+.home-icons-container {
+  text-align: end;
+  margin: 2rem 2rem 10rem 0;
+}
+
+.home-icon {
+  color: white;
+  font-size: 33px;
+  margin-right: 15px;
+}
+
+.search-icon {
+  color: white;
+  font-size: 33px;
+}
+
+.text-moviepop {
+  color: #c48900;
+  font-size: 50px;
+  text-align: center;
+  margin: 0;
 }
