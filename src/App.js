@@ -10,11 +10,11 @@ import NavIcons from './components/NavIcons';
 function App() {
   return (
     <div className="App">
-      <NavIcons />
       <BrowserRouter>
+        <NavIcons />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="search" element={<MovieCard />} />
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="search" element={<MovieCard />} />
         </Routes>
       </BrowserRouter>
     </div>

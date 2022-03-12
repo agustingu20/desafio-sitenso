@@ -37,3 +37,8 @@ body {
   text-align: center;
   margin: 0;
 }
+
+/*CSS NAVICONS */
+.link-activated {
+  color: #c48900;
+}
