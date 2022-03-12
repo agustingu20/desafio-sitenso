@@ -4,17 +4,33 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import MovieCard from './components/MovieCard';
 import NavIcons from './components/NavIcons';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 
 
 function App() {
+
+  const [starWarsMovies, setStarWarsMovies] = useState([])
+
+  useEffect(() => {
+    const getStarWarsMovies = async () => {
+      const response = await axios.get("http://api.tvmaze.com/search/shows?q=star%20wars")
+      setStarWarsMovies(response.data)
+    }
+    console.log(starWarsMovies)
+    getStarWarsMovies()
+  }, [])
+
+
+
   return (
     <div className="App">
       <BrowserRouter>
         <NavIcons />
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="search" element={<MovieCard />} />
+          <Route exact path="search" element={<MovieCard starWarsMovies={starWarsMovies} />} />
         </Routes>
       </BrowserRouter>
     </div>
