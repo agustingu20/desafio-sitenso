@@ -3,7 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass, faHouseChimney } from "@fortawesome/free-solid-svg-icons"
 import { Link } from 'react-router-dom'
 
-export default function NavIcons() {
+export default function NavIcons({ to }) {
+
     const addActiveClassLinkHome = () => {
         document.getElementById("homeIcon").classList.add("link-activated")
         document.getElementById("searchIcon").classList.remove("link-activated")
@@ -16,10 +17,20 @@ export default function NavIcons() {
     return (
         <div className='home-icons-container'>
             <Link to="/">
-                <FontAwesomeIcon onClick={addActiveClassLinkHome} id="homeIcon" className='home-icon link-activated' icon={faHouseChimney} />
+                <FontAwesomeIcon
+                    onClick={addActiveClassLinkHome}
+                    id="homeIcon"
+                    className='home-icon link-activated'
+                    icon={faHouseChimney}
+                />
             </Link>
             <Link to="search">
-                <FontAwesomeIcon onClick={addActiveClassLinkSearch} id="searchIcon" className='search-icon' icon={faMagnifyingGlass} />
+                <FontAwesomeIcon
+                    onClick={addActiveClassLinkSearch}
+                    id="searchIcon"
+                    className='search-icon'
+                    icon={faMagnifyingGlass}
+                />
             </Link>
         </div >
     )

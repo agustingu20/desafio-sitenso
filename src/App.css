@@ -43,3 +43,55 @@ body {
 .link-activated {
   color: #c48900;
 }
+
+/* CSS CARDS */
+.movies-card {
+  width: 11rem;
+  margin: 5px;
+  background: none;
+  border: none;
+}
+
+.movies-card-title {
+  color: white;
+  font-size: 14px;
+  text-align: end;
+}
+
+/* CSS SEARCH */
+.search-form {
+  background-color: #294056;
+  border: none;
+  border-radius: 10px;
+  width: 358px;
+  height: 51px;
+}
+
+#movieSearch::placeholder {
+  color: white;
+}
+
+.searchMovie-title {
+  width: 100%;
+  font-size: 20px;
+  color: white;
+}
+
+.searchMovie-title-container {
+  width: 100%;
+  margin-top: 25px;
+  margin-left: 62px;
+}
+
+.hr-line {
+  color: #65686b;
+  width: 80%;
+}
+
+.searchMovie-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: -130px;
+  width: 400px;
+}

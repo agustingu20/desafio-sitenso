@@ -6,6 +6,7 @@ import MovieCard from './components/MovieCard';
 import NavIcons from './components/NavIcons';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import SearchMovie from './components/SearchMovie';
 
 
 
@@ -30,7 +31,7 @@ function App() {
         <NavIcons />
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="search" element={<MovieCard starWarsMovies={starWarsMovies} />} />
+          <Route exact path="search" element={<SearchMovie starWarsMovies={starWarsMovies} />} />
         </Routes>
       </BrowserRouter>
     </div>
