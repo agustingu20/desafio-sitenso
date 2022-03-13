@@ -4,7 +4,7 @@ import { Form } from 'react-bootstrap'
 import MovieCard from './MovieCard'
 import FetchedMovieCard from "./FetchedMovieCard"
 
-export default function SearchMovie({ starWarsMovies }) {
+export default function SearchMovie({ starWarsMovies, setMovieName, movieName, selectedMovie }) {
     const [input, setInput] = useState("")
     const [fetchedMovies, setFetchedMovies] = useState([])
 
@@ -18,9 +18,12 @@ export default function SearchMovie({ starWarsMovies }) {
         setFetchedMovies(response.data)
     }
 
+
     useEffect(() => {
         searchMovies()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [input])
+
 
     return (
         <div className='searchMovie-container'>
@@ -39,7 +42,7 @@ export default function SearchMovie({ starWarsMovies }) {
             </div>
             <hr className='hr-line' />
             <div>
-                {fetchedMovies.length === 0 && <MovieCard starWarsMovies={starWarsMovies} />}
+                {fetchedMovies.length === 0 && <MovieCard to={`${selectedMovie[0]?.show?.id}`} starWarsMovies={starWarsMovies} setMovieName={setMovieName} movieName={movieName} />}
                 {fetchedMovies.length !== 0 && <FetchedMovieCard fetchedMovies={fetchedMovies} />}
             </div>
         </div>
