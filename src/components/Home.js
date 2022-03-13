@@ -2,6 +2,7 @@ import React from 'react'
 import moviePop from "../assets/moviePopIcon.png"
 
 export default function Home() {
+
     return (
         <div className='home-container'>
             <div style={{ textAlign: "center" }}>
