@@ -1,16 +1,37 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import { Form } from 'react-bootstrap'
 import MovieCard from './MovieCard'
+import FetchedMovieCard from "./FetchedMovieCard"
 
 export default function SearchMovie({ starWarsMovies }) {
+    const [input, setInput] = useState("")
+    const [fetchedMovies, setFetchedMovies] = useState([])
+
+    const handleChange = (event) => {
+        const value = event.target.value
+        setInput(value)
+    }
+
+    const searchMovies = async () => {
+        const response = await axios.get(`http://api.tvmaze.com/search/shows?q=${input}`)
+        setFetchedMovies(response.data)
+    }
+
+    useEffect(() => {
+        searchMovies()
+    }, [input])
+
     return (
         <div className='searchMovie-container'>
             <div>
                 <Form.Control
+                    name="movieName"
                     type="text"
                     id="movieSearch"
                     placeholder='Buscar'
                     className='search-form'
+                    onChange={handleChange}
                 />
             </div>
             <div className='searchMovie-title-container'>
@@ -18,7 +39,8 @@ export default function SearchMovie({ starWarsMovies }) {
             </div>
             <hr className='hr-line' />
             <div>
-                <MovieCard starWarsMovies={starWarsMovies} />
+                {fetchedMovies.length === 0 && <MovieCard starWarsMovies={starWarsMovies} />}
+                {fetchedMovies.length !== 0 && <FetchedMovieCard fetchedMovies={fetchedMovies} />}
             </div>
         </div>
     )

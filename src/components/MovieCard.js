@@ -12,7 +12,6 @@ export default function MovieCard({ starWarsMovies }) {
                     </Card.Body>
                 </Card>
             ))}
-
         </div>
     )
 }
