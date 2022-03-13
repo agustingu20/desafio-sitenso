@@ -19,10 +19,10 @@ export default function MovieCard({ starWarsMovies, selectedMovie, to }) {
                     <Card className='movies-card' key={`starWarsMovie-${starWarsMovie.show.id}`}>
                         <Link to={to}>
                             <Card.Img variant="top" style={{ height: '12rem' }} src={starWarsMovie.show.image.original} name={`${starWarsMovie.show.name}`} onClick={click} />
+                            <Card.Body>
+                                <Card.Title className='movies-card-title'>{starWarsMovie.show.name}</Card.Title>
+                            </Card.Body>
                         </Link>
-                        <Card.Body>
-                            <Card.Title className='movies-card-title'>{starWarsMovie.show.name}</Card.Title>
-                        </Card.Body>
                     </Card>
                 ))
             }

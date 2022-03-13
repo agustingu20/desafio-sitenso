@@ -15,7 +15,6 @@ function App() {
 
   const [starWarsMovies, setStarWarsMovies] = useState([])
   console.log("App ~ starWarsMovies", starWarsMovies)
-
   const [movieName, setMovieName] = useState("")
   console.log("App ~ movieName", movieName)
 

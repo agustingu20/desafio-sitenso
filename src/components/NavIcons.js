@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass, faHouseChimney } from "@fortawesome/free-solid-svg-icons"
+import { faMagnifyingGlass, faHouseChimney, faArrowLeft } from "@fortawesome/free-solid-svg-icons"
 import { Link, useLocation } from 'react-router-dom'
 
 export default function NavIcons() {
@@ -18,7 +18,7 @@ export default function NavIcons() {
     useEffect(() => {
         verifyingLocation()
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    }, [location.pathname])
 
     const addActiveClassLinkHome = () => {
         document.getElementById("homeIcon").classList.add("link-activated")
@@ -31,22 +31,35 @@ export default function NavIcons() {
 
     return (
         <div className='home-icons-container'>
-            <Link to="/">
-                <FontAwesomeIcon
-                    onClick={addActiveClassLinkHome}
-                    id="homeIcon"
-                    className='home-icon'
-                    icon={faHouseChimney}
-                />
-            </Link>
-            <Link to="search">
-                <FontAwesomeIcon
-                    onClick={addActiveClassLinkSearch}
-                    id="searchIcon"
-                    className='search-icon'
-                    icon={faMagnifyingGlass}
-                />
-            </Link>
+            {(location.pathname === "/" || location.pathname === "/search")
+                ?
+                <div>
+                    <Link to="/">
+                        <FontAwesomeIcon
+                            onClick={addActiveClassLinkHome}
+                            id="homeIcon"
+                            className='home-icon'
+                            icon={faHouseChimney}
+                        />
+                    </Link>
+                    <Link to="search">
+                        <FontAwesomeIcon
+                            onClick={addActiveClassLinkSearch}
+                            id="searchIcon"
+                            className='search-icon'
+                            icon={faMagnifyingGlass}
+                        />
+                    </Link>
+                </div>
+                :
+                <Link to="search">
+                    <FontAwesomeIcon
+                        id="searchIcon"
+                        className='search-icon'
+                        icon={faArrowLeft}
+                    />
+                </Link>
+            }
         </div >
     )
 }
