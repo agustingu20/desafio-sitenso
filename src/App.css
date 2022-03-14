@@ -175,6 +175,16 @@ body {
   font-size: 23px;
 }
 
+/* CSS ADMIN */
+.admin-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -130px;
+  margin-bottom: 60px;
+  width: 400px;
+}
+
 /* MEDIA QUERIES */
 
 @media only screen and (min-width: 768px) {
@@ -204,6 +214,10 @@ body {
     text-align: end;
     margin: 2rem 1rem 10rem 0;
   }
+
+  .admin-container {
+    width: 550px;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -232,5 +246,9 @@ body {
     width: 760px;
     text-align: end;
     margin: 2rem 1rem 10rem 0;
+  }
+
+  .admin-container {
+    width: 760px;
   }
 }

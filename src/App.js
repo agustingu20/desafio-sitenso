@@ -8,6 +8,7 @@ import axios from 'axios';
 import SearchMovie from './components/SearchMovie';
 import MovieInfo from './components/MovieInfo';
 import { useSelector } from 'react-redux';
+import Admin from './components/Admin';
 
 
 
@@ -34,6 +35,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="search" element={<SearchMovie starWarsMovies={starWarsMovies} />} />
           <Route exact path="search/:movieName" element={<MovieInfo selectedMovie={selectedMovie} />} />
+          <Route exact path="/admin" element={<Admin />} />
         </Routes>
       </BrowserRouter >
     </div >
