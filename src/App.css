@@ -32,6 +32,11 @@ body {
   font-size: 33px;
 }
 
+.back-icon {
+  color: white;
+  font-size: 33px;
+}
+
 .text-moviepop {
   color: #c48900;
   font-size: 50px;
@@ -168,4 +173,64 @@ body {
   top: -35px;
   left: 240px;
   font-size: 23px;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (min-width: 768px) {
+  .home-container {
+    width: 700px;
+  }
+
+  .search-form {
+    width: 550px;
+    height: 51px;
+  }
+
+  .searchMovie-container {
+    width: 550px;
+  }
+
+  .searchMovie-title {
+    width: 550px;
+  }
+
+  .hr-line {
+    width: 95%;
+  }
+
+  .home-icons-container {
+    width: 550px;
+    text-align: end;
+    margin: 2rem 1rem 10rem 0;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .home-container {
+    width: 900px;
+  }
+
+  .search-form {
+    width: 740px;
+    height: 51px;
+  }
+
+  .searchMovie-container {
+    width: 810px;
+  }
+
+  .hr-line {
+    width: 85%;
+  }
+
+  .movieInfo-container {
+    width: 800px;
+  }
+
+  .home-icons-container {
+    width: 760px;
+    text-align: end;
+    margin: 2rem 1rem 10rem 0;
+  }
 }

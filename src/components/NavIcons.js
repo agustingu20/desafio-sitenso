@@ -52,13 +52,14 @@ export default function NavIcons() {
                     </Link>
                 </div>
                 :
-                <Link to="search">
-                    <FontAwesomeIcon
-                        id="searchIcon"
-                        className='search-icon'
-                        icon={faArrowLeft}
-                    />
-                </Link>
+                <div>
+                    <Link to="search">
+                        <FontAwesomeIcon
+                            className='back-icon'
+                            icon={faArrowLeft}
+                        />
+                    </Link>
+                </div>
             }
         </div >
     )

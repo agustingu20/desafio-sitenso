@@ -4,7 +4,7 @@ import moviePop from "../assets/moviePopIcon.png"
 export default function Home() {
 
     return (
-        <div className='home-container'>
+        <div className='home-container flex-column'>
             <div style={{ textAlign: "center" }}>
                 <img src={moviePop} alt="movieLogo" />
             </div>
