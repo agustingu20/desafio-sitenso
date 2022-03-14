@@ -4,7 +4,7 @@ import { Form } from 'react-bootstrap'
 import MovieCard from './MovieCard'
 import FetchedMovieCard from "./FetchedMovieCard"
 
-export default function SearchMovie({ starWarsMovies, setMovieName, movieName, selectedMovie }) {
+export default function SearchMovie({ starWarsMovies }) {
     const [input, setInput] = useState("")
     const [fetchedMovies, setFetchedMovies] = useState([])
 
@@ -17,6 +17,7 @@ export default function SearchMovie({ starWarsMovies, setMovieName, movieName, s
         const response = await axios.get(`http://api.tvmaze.com/search/shows?q=${input}`)
         setFetchedMovies(response.data)
     }
+
 
 
     useEffect(() => {
@@ -42,7 +43,7 @@ export default function SearchMovie({ starWarsMovies, setMovieName, movieName, s
             </div>
             <hr className='hr-line' />
             <div>
-                {fetchedMovies.length === 0 && <MovieCard to={`${selectedMovie[0]?.show?.id}`} starWarsMovies={starWarsMovies} setMovieName={setMovieName} movieName={movieName} />}
+                {fetchedMovies.length === 0 && <MovieCard starWarsMovies={starWarsMovies} />}
                 {fetchedMovies.length !== 0 && <FetchedMovieCard fetchedMovies={fetchedMovies} />}
             </div>
         </div>

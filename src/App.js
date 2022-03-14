@@ -14,12 +14,7 @@ import { useSelector } from 'react-redux';
 function App() {
 
   const [starWarsMovies, setStarWarsMovies] = useState([])
-  console.log("App ~ starWarsMovies", starWarsMovies)
-  const [movieName, setMovieName] = useState("")
-  console.log("App ~ movieName", movieName)
-
   const selectedMovie = useSelector((store) => store.movie)
-  console.log("App ~ selectedMovie", selectedMovie)
 
   useEffect(() => {
     const getStarWarsMovies = async () => {
@@ -27,7 +22,7 @@ function App() {
       setStarWarsMovies(response.data)
     }
     getStarWarsMovies()
-  }, [movieName])
+  }, [selectedMovie])
 
 
 
@@ -37,8 +32,8 @@ function App() {
         <NavIcons />
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="search" element={<SearchMovie starWarsMovies={starWarsMovies} setMovieName={setMovieName} movieName={movieName} selectedMovie={selectedMovie} />} />
-          <Route exact path="search/:movieId" element={<MovieInfo selectedMovie={selectedMovie} />} />
+          <Route exact path="search" element={<SearchMovie starWarsMovies={starWarsMovies} />} />
+          <Route exact path="search/:movieName" element={<MovieInfo selectedMovie={selectedMovie} />} />
         </Routes>
       </BrowserRouter >
     </div >
