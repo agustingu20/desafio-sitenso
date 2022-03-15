@@ -17,7 +17,8 @@ body {
 }
 
 .home-icons-container {
-  text-align: end;
+  display: flex;
+  justify-content: space-between;
   margin: 2rem 1rem 10rem 0;
 }
 
@@ -25,6 +26,12 @@ body {
   color: white;
   font-size: 33px;
   margin-right: 15px;
+}
+
+.user-icon {
+  color: white;
+  font-size: 33px;
+  margin-left: 35px;
 }
 
 .search-icon {
@@ -189,7 +196,7 @@ body {
 
 @media only screen and (min-width: 768px) {
   .home-container {
-    width: 700px;
+    width: 550px;
   }
 
   .search-form {
@@ -198,6 +205,10 @@ body {
   }
 
   .searchMovie-container {
+    width: 550px;
+  }
+
+  .movieInfo-container {
     width: 550px;
   }
 
@@ -218,11 +229,15 @@ body {
   .admin-container {
     width: 550px;
   }
+
+  .user-icon {
+    margin-left: 15px;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
   .home-container {
-    width: 900px;
+    width: 810px;
   }
 
   .search-form {
@@ -239,7 +254,7 @@ body {
   }
 
   .movieInfo-container {
-    width: 800px;
+    width: 810px;
   }
 
   .home-icons-container {
@@ -249,6 +264,16 @@ body {
   }
 
   .admin-container {
-    width: 760px;
+    width: 810px;
+  }
+
+  .user-icon {
+    margin-left: 45px;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .home-container {
+    width: 827px;
   }
 }

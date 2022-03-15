@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass, faHouseChimney, faArrowLeft } from "@fortawesome/free-solid-svg-icons"
+import { faMagnifyingGlass, faHouseChimney, faArrowLeft, faUserAstronaut } from "@fortawesome/free-solid-svg-icons"
 import { Link, useLocation } from 'react-router-dom'
 
 export default function NavIcons() {
@@ -12,6 +12,9 @@ export default function NavIcons() {
             document.getElementById("homeIcon").classList.add("link-activated")
         } else if (location.pathname === "/search") {
             document.getElementById("searchIcon").classList.add("link-activated")
+            document.getElementById("userIcon").classList.remove("link-activated")
+        } else if (location.pathname === "/admin") {
+            document.getElementById("userIcon").classList.add("link-activated")
         }
     }
 
@@ -23,14 +26,31 @@ export default function NavIcons() {
     const addActiveClassLinkHome = () => {
         document.getElementById("homeIcon").classList.add("link-activated")
         document.getElementById("searchIcon").classList.remove("link-activated")
+        document.getElementById("userIcon").classList.remove("link-activated")
     }
     const addActiveClassLinkSearch = () => {
         document.getElementById("homeIcon").classList.remove("link-activated")
         document.getElementById("searchIcon").classList.add("link-activated")
+        document.getElementById("userIcon").classList.remove("link-activated")
+    }
+    const addActiveClassLinkUser = () => {
+        document.getElementById("homeIcon").classList.remove("link-activated")
+        document.getElementById("searchIcon").classList.remove("link-activated")
+        document.getElementById("userIcon").classList.add("link-activated")
     }
 
     return (
         <div className='home-icons-container'>
+            <div>
+                <Link to="/admin">
+                    <FontAwesomeIcon
+                        onClick={addActiveClassLinkUser}
+                        id="userIcon"
+                        className='user-icon'
+                        icon={faUserAstronaut}
+                    />
+                </Link>
+            </div>
             {(location.pathname === "/" || location.pathname === "/search")
                 ?
                 <div>
