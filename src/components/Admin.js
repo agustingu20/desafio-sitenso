@@ -9,7 +9,6 @@ export default function Admin() {
     ])
 
     const [input, setInput] = useState({})
-    console.log("Admin ~ input", input)
 
     const deleteUser = (event) => {
         const usuarioFiltrado = users.filter((user) => user.id.toString() !== event.target.value)
@@ -30,6 +29,7 @@ export default function Admin() {
 
     return (
         <div className='admin-container'>
+            <h4 className='text-white mb-5 mx-3 fw-bold'>Nuevo usuario</h4>
             <div className='d-flex justify-content-center mb-5'>
                 <Form className='text-white mb-5 w-75' onSubmit={handleSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicName">
@@ -49,6 +49,7 @@ export default function Admin() {
                 </Form>
             </div>
             <div>
+                <h4 className='text-white mb-5 fw-bold mx-3'>Usuarios</h4>
                 <Table striped bordered hover variant='dark' responsive>
                     <thead className='text-white'>
                         <tr>

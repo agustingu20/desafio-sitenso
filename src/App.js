@@ -9,6 +9,7 @@ import SearchMovie from './components/SearchMovie';
 import MovieInfo from './components/MovieInfo';
 import { useSelector } from 'react-redux';
 import Admin from './components/Admin';
+import Login from './components/Login';
 
 
 
@@ -36,6 +37,7 @@ function App() {
           <Route exact path="search" element={<SearchMovie starWarsMovies={starWarsMovies} />} />
           <Route exact path="search/:movieName" element={<MovieInfo selectedMovie={selectedMovie} />} />
           <Route exact path="/admin" element={<Admin />} />
+          <Route exact path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter >
     </div >

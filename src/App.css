@@ -192,6 +192,15 @@ body {
   width: 400px;
 }
 
+/* CSS LOGIN */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 60px;
+  width: 400px;
+}
+
 /* MEDIA QUERIES */
 
 @media only screen and (min-width: 768px) {
@@ -227,6 +236,10 @@ body {
   }
 
   .admin-container {
+    width: 550px;
+  }
+
+  .login-container {
     width: 550px;
   }
 
@@ -267,6 +280,10 @@ body {
     width: 810px;
   }
 
+  .login-container {
+    width: 810px;
+  }
+
   .user-icon {
     margin-left: 45px;
   }
@@ -274,6 +291,14 @@ body {
 
 @media only screen and (min-width: 1920px) {
   .home-container {
-    width: 827px;
+    width: 810px;
+  }
+
+  .admin-container {
+    width: 810px;
+  }
+
+  .login-container {
+    width: 810px;
   }
 }
