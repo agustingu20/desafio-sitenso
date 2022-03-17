@@ -1,9 +1,9 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass, faHouseChimney, faArrowLeft, faUserAstronaut } from "@fortawesome/free-solid-svg-icons"
+import { faMagnifyingGlass, faHouseChimney, faArrowLeft, faArrowLeftLong, faUserAstronaut } from "@fortawesome/free-solid-svg-icons"
 import { Link, useLocation } from 'react-router-dom'
 
-export default function NavIcons() {
+export default function NavIcons({ logOut, token }) {
 
     const location = useLocation();
 
@@ -19,6 +19,16 @@ export default function NavIcons() {
                         icon={faUserAstronaut}
                     />
                 </Link>
+                {token && <Link
+                    to={"/"}
+                >
+                    <FontAwesomeIcon
+                        id="logOutIcon"
+                        className="user-icon"
+                        icon={faArrowLeftLong}
+                        onClick={logOut}
+                    />
+                </Link>}
             </div>
             {(location.pathname === "/" || location.pathname === "/search")
                 ?

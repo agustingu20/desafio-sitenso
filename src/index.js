@@ -7,9 +7,12 @@ import { applyMiddleware, compose, createStore } from 'redux';
 import reducers from "./reducers"
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
+import axios from "axios"
 
 const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)));
+
+axios.defaults.baseURL = "http://localhost:4000/api"
 
 ReactDOM.render(
   <React.StrictMode>

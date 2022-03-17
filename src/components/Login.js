@@ -1,9 +1,11 @@
 import { Button } from 'react-bootstrap'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Form } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
+import axios from "axios"
+import swal from 'sweetalert'
 
-export default function Login() {
+export default function Login({ token, user, setToken }) {
 
     const navigate = useNavigate()
 
@@ -15,14 +17,30 @@ export default function Login() {
         setInput(newInput)
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
+        const form = event.currentTarget;
         event.preventDefault()
-        if (input.email === "admin@admin.com" && input.password === "admin@1234") {
-            navigate("/admin")
-        } else {
-            alert("Ingrese un email y contraseña válidos")
+        try {
+            const { data } = await axios.post("/auth/login", input)
+            localStorage.setItem("token", JSON.stringify(data));
+            setToken(data.token)
+            swal({
+                title: "Usuario registrado correctamente!",
+                icon: "success",
+            }).then(() => {
+                form.reset();
+                navigate("/")
+            });
+        } catch (error) {
+            console.log(error.response.data)
         }
     }
+
+    useEffect(() => {
+        if (user.email) {
+            navigate("/")
+        }
+    }, [user])
 
 
     return (

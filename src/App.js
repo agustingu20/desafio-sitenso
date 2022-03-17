@@ -12,12 +12,15 @@ import Admin from './components/Admin';
 import Login from './components/Login';
 import Register from './components/Register';
 
-
+const localToken = JSON.parse(localStorage.getItem('token'))?.token || "";
 
 function App() {
 
+  const [user, setUser] = useState({})
+  console.log("App ~ user", user)
   const [starWarsMovies, setStarWarsMovies] = useState([])
   const selectedMovie = useSelector((store) => store.movie)
+  const [token, setToken] = useState(localToken)
 
   useEffect(() => {
     const getStarWarsMovies = async () => {
@@ -27,19 +30,37 @@ function App() {
     getStarWarsMovies()
   }, [selectedMovie])
 
+  useEffect(() => {
+    if (token) {
+      const request = async () => {
+        axios.defaults.headers["x-auth-token"] = token
+        const { data } = await axios.get('/auth')
+        setUser(data);
+      };
+      request();
+    }
+  }, [token])
+
+  const logOut = () => {
+    localStorage.removeItem('token');
+    setUser({});
+    setToken('');
+    window.location.href = '/';
+  }
+
 
 
   return (
     <div className="App">
       <BrowserRouter>
-        <NavIcons />
+        <NavIcons logOut={logOut} token={token} />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="search" element={<SearchMovie starWarsMovies={starWarsMovies} />} />
           <Route exact path="search/:movieName" element={<MovieInfo selectedMovie={selectedMovie} />} />
-          <Route exact path="/admin" element={<Admin />} />
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/register" element={<Register />} />
+          {user.category && <Route exact path="/admin" element={<Admin />} />}
+          <Route exact path="/login" element={<Login token={token} setToken={setToken} user={user} />} />
+          <Route exact path="/register" element={<Register setToken={setToken} />} />
         </Routes>
       </BrowserRouter >
     </div >
