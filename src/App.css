@@ -201,6 +201,16 @@ body {
   width: 400px;
 }
 
+.register-link {
+  text-decoration: none;
+  color: white;
+}
+
+.register-link:hover {
+  text-decoration: none;
+  color: #c48900;
+}
+
 /* MEDIA QUERIES */
 
 @media only screen and (min-width: 768px) {
