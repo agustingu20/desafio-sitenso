@@ -1,5 +1,5 @@
 import { Button } from 'react-bootstrap'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Form } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from "axios"
@@ -35,13 +35,6 @@ export default function Login({ token, user, setToken }) {
             console.log(error.response.data)
         }
     }
-
-    useEffect(() => {
-        if (user.email) {
-            navigate("/")
-        }
-    }, [user])
-
 
     return (
         <div className='login-container'>

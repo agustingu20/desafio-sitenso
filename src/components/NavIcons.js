@@ -1,16 +1,17 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass, faHouseChimney, faArrowLeft, faArrowLeftLong, faUserAstronaut } from "@fortawesome/free-solid-svg-icons"
+import { faMagnifyingGlass, faHouseChimney, faArrowLeft, faUserAstronaut } from "@fortawesome/free-solid-svg-icons"
 import { Link, useLocation } from 'react-router-dom'
+import { Button } from 'react-bootstrap';
 
-export default function NavIcons({ logOut, token }) {
+export default function NavIcons({ logOut, token, user }) {
 
     const location = useLocation();
 
     return (
         <div className='home-icons-container'>
             <div>
-                <Link
+                {!token && <Link
                     to={location.pathname !== "/admin" ? "/login" : "/admin"}
                 >
                     <FontAwesomeIcon
@@ -18,16 +19,13 @@ export default function NavIcons({ logOut, token }) {
                         className={location.pathname === "/login" || location.pathname === "/admin" ? "link-activated user-icon" : "user-icon"}
                         icon={faUserAstronaut}
                     />
-                </Link>
+                </Link>}
+                {/* {user !== {} && <Link to={`/${user?._id}`}>{user.name}</Link >} */}
+                {user.category === "admin" && <Link to={"/admin"} className="text-decoration-none text-white ms-4">Acceso admin</Link >}
                 {token && <Link
                     to={"/"}
                 >
-                    <FontAwesomeIcon
-                        id="logOutIcon"
-                        className="user-icon"
-                        icon={faArrowLeftLong}
-                        onClick={logOut}
-                    />
+                    <Button onClick={logOut} variant="danger" className='btn-sm mx-3'>Cerrar sesión</Button>
                 </Link>}
             </div>
             {(location.pathname === "/" || location.pathname === "/search")

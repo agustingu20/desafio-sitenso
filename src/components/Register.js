@@ -53,7 +53,8 @@ export default function Register({ setToken }) {
                         placeholder="Ingrese nombre"
                         required
                     />
-                </Form.Group><Form.Group className="mb-3" controlId="formBasicLastName">
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicLastName">
                     <Form.Label>Apellido</Form.Label>
                     <Form.Control
                         onChange={handleChange}
