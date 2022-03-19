@@ -14,7 +14,7 @@ export default function SearchMovie({ starWarsMovies }) {
     }
 
     const searchMovies = async () => {
-        const response = await axios.get(`http://api.tvmaze.com/search/shows?q=${input}`)
+        const response = await axios.get(`https://api.tvmaze.com/search/shows?q=${input}`)
         setFetchedMovies(response.data)
     }
 
