@@ -12,12 +12,6 @@ export default function MovieCard({ starWarsMovies }) {
         dispatch(fetchMovie(event.target.name))
     }
 
-    // const favClick = async (event) => {
-    //     const { value, name } = event.target
-    //     const favsFilter = favs.filter(fav => fav !== null)
-    //     setFavs([...favsFilter, { [name]: value }])
-    // }
-
     return (
         <div className='home-container'>
             {

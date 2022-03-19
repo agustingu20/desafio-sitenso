@@ -20,7 +20,6 @@ export default function NavIcons({ logOut, token, user }) {
                         icon={faUserAstronaut}
                     />
                 </Link>}
-                {/* {user !== {} && <Link to={`/${user?._id}`}>{user.name}</Link >} */}
                 {user.category === "admin" && <Link to={"/admin"} className="text-decoration-none text-white ms-4">Acceso admin</Link >}
                 {token && <Link
                     to={"/"}

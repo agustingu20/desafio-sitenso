@@ -12,7 +12,8 @@ import axios from "axios"
 const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)));
 
-axios.defaults.baseURL = "http://localhost:4000/api"
+// axios.defaults.baseURL = "http://localhost:4000/api"
+axios.defaults.baseURL = "https://sitenso-back.herokuapp.com/api"
 
 ReactDOM.render(
   <React.StrictMode>

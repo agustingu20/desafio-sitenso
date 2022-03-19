@@ -17,11 +17,9 @@ const localToken = JSON.parse(localStorage.getItem('token'))?.token || "";
 function App() {
 
   const [user, setUser] = useState({})
-  console.log("App ~ user", user)
   const [starWarsMovies, setStarWarsMovies] = useState([])
   const selectedMovie = useSelector((store) => store.movie)
   const [token, setToken] = useState(localToken)
-  // const [favs, setFavs] = useState([])
 
   useEffect(() => {
     const getStarWarsMovies = async () => {
@@ -56,7 +54,6 @@ function App() {
         <NavIcons logOut={logOut} token={token} user={user} />
         <Routes>
           <Route exact path="/" element={<Home />} />
-          {/* <Route exact path="/:userID" element={<UserProfile />} /> */}
           <Route exact path="search" element={<SearchMovie starWarsMovies={starWarsMovies} />} />
           <Route exact path="search/:movieName" element={<MovieInfo selectedMovie={selectedMovie} />} />
           {user.category && <Route exact path="/admin" element={<Admin token={token} />} />}
