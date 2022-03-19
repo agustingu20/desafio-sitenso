@@ -25,7 +25,7 @@ export default function Login({ token, user, setToken }) {
             localStorage.setItem("token", JSON.stringify(data));
             setToken(data.token)
             swal({
-                title: "Usuario registrado correctamente!",
+                title: "Usuario logueado correctamente!",
                 icon: "success",
             }).then(() => {
                 form.reset();
