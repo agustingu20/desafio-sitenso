@@ -20,13 +20,13 @@ export default function Admin() {
 
     const deleteUser = async (event) => {
         const userId = event.target.value;
-        if (!users[0].category) {
+        if (users.length > 1) {
             await axios.delete(`/usuarios/${userId}`)
             swal("El usuario fue eliminado!", {
                 icon: "success",
             });
         } else {
-            swal("El usuario admin no fue eliminado!", {
+            swal("El usuario no fue eliminado!", {
                 icon: "error",
             });
         }
@@ -53,7 +53,7 @@ export default function Admin() {
                                 <td className='text-white'>{user.lastName}</td>
                                 <td className='text-white'>{user.email}</td>
                                 <td className='text-white'>
-                                    <Button onClick={deleteUser} value={user._id} variant="danger" className='btn-sm'>Eliminar</Button>
+                                    {!user.category && <Button onClick={deleteUser} value={user._id} variant="danger" className='btn-sm'>Eliminar</Button>}
                                 </td>
                             </tr>
                         </tbody>
