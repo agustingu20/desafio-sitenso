@@ -26,7 +26,6 @@ export default function Register({ setToken }) {
             event.stopPropagation();
         }
         const { data } = await axios.post("/auth/register", newUser)
-        console.log("handleSubmit ~ data", data)
         localStorage.setItem("token", JSON.stringify(data));
         setToken(data.token);
         swal({
