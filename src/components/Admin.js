@@ -21,7 +21,7 @@ export default function Admin() {
     const deleteUser = async (event) => {
         const userId = event.target.value;
         console.log("deleteUser ~ userId", userId)
-        if (users[0].category !== "admin") {
+        if (!users[0].category) {
             await axios.delete(`/usuarios/${userId}`)
             swal("El usuario fue eliminado!", {
                 icon: "success",
