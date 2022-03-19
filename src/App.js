@@ -23,7 +23,7 @@ function App() {
 
   useEffect(() => {
     const getStarWarsMovies = async () => {
-      const response = await axios.get("http://api.tvmaze.com/search/shows?q=star%20wars")
+      const response = await axios.get("https://api.tvmaze.com/search/shows?q=star%20wars")
       setStarWarsMovies(response.data)
     }
     getStarWarsMovies()
