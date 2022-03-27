@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import axios from "axios"
 import swal from 'sweetalert'
 
-export default function Login({ token, user, setToken }) {
+export default function Login({ setToken }) {
 
     const navigate = useNavigate()
 
