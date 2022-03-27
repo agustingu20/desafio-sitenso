@@ -176,8 +176,8 @@ body {
 }
 
 .stars-position {
-  position: relative;
-  top: -35px;
+  position: absolute;
+  top: 370px;
   left: 240px;
   font-size: 23px;
 }
