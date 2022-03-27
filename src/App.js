@@ -27,7 +27,7 @@ function App() {
       setStarWarsMovies(response.data)
     }
     getStarWarsMovies()
-  }, [selectedMovie])
+  }, [starWarsMovies.length])
 
   useEffect(() => {
     if (token) {
