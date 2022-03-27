@@ -21,7 +21,7 @@ export default function MovieCard({ starWarsMovies }) {
                             <Card.Img variant="top" style={{ height: '12rem' }} src={starWarsMovie.show.image.original} name={`${starWarsMovie.show.name}`} onClick={click} />
                         </Link>
                         <Card.Body className='d-flex justify-content-between px-0'>
-                            <Button variant="danger" className="btn-sm h-75 mx-2">❤</Button>
+                            {/* <Button variant="danger" className="btn-sm h-75 mx-2">❤</Button> */}
                             <Link className='text-decoration-none' to={`${starWarsMovie.show.name}`}>
                                 <Card.Title className='movies-card-title'>{starWarsMovie.show.name}</Card.Title>
                             </Link>
