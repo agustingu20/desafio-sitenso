@@ -93,7 +93,7 @@ export default function Register({ setToken }) {
                     />
                 </Form.Group>
                 <Button variant="warning" type="submit">
-                    Ingresar
+                    Registrarse
                 </Button>
             </Form>
         </div>
