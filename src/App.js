@@ -57,7 +57,7 @@ function App() {
           <Route exact path="search" element={<SearchMovie starWarsMovies={starWarsMovies} />} />
           <Route exact path="search/:movieName" element={<MovieInfo selectedMovie={selectedMovie} />} />
           {user.category && <Route exact path="/admin" element={<Admin token={token} />} />}
-          <Route exact path="/login" element={<Login token={token} setToken={setToken} user={user} />} />
+          {!token && <Route exact path="/login" element={<Login token={token} setToken={setToken} user={user} />} />}
           <Route exact path="/register" element={<Register setToken={setToken} />} />
         </Routes>
       </BrowserRouter >

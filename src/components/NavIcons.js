@@ -12,7 +12,7 @@ export default function NavIcons({ logOut, token, user }) {
         <div className='home-icons-container'>
             <div>
                 {!token && <Link
-                    to={location.pathname !== "/admin" ? "/login" : "/admin"}
+                    to={"/login"}
                 >
                     <FontAwesomeIcon
                         id="userIcon"
