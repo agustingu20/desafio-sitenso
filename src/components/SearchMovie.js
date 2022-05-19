@@ -44,7 +44,7 @@ export default function SearchMovie({ starWarsMovies, token }) {
             <hr className='hr-line' />
             <div>
                 {fetchedMovies.length === 0 && <MovieCard starWarsMovies={starWarsMovies} token={token} />}
-                {fetchedMovies.length !== 0 && <FetchedMovieCard fetchedMovies={fetchedMovies} />}
+                {fetchedMovies.length !== 0 && <FetchedMovieCard fetchedMovies={fetchedMovies} token={token} />}
             </div>
         </div>
     )

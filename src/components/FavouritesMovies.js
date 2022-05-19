@@ -17,7 +17,7 @@ export default function FavouritesMovies({ token }) {
             getFavouritesMovies();
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [favouritesMovies]);
+    }, [favouritesMovies.length]);
 
     const deleteFavouriteMovie = async (event) => {
         const favouritesMoviesId = event.target.value;
@@ -32,7 +32,7 @@ export default function FavouritesMovies({ token }) {
         <div className='admin-container'>
             <div>
                 <h4 className='text-white mb-5 fw-bold mx-4'>Favoritos</h4>
-                <Table striped bordered hover variant='dark' className='mx-4' responsive>
+                {favouritesMovies.length > 0 && <Table striped bordered hover variant='dark' className='mx-4' responsive>
                     <thead className='text-white'>
                         <tr>
                             <th>Nombre</th>
@@ -49,7 +49,7 @@ export default function FavouritesMovies({ token }) {
                             </tr>
                         </tbody>
                     ))}
-                </Table>
+                </Table>}
             </div>
         </div>
     );
