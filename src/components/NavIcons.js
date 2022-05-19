@@ -21,16 +21,16 @@ export default function NavIcons({ logOut, token, user }) {
                     />
                 </Link>}
                 {user.category === "admin" && <Link to={"/admin"} className="text-decoration-none text-white ms-4">Acceso admin</Link >}
-                {token && <Link to={"/favourites"} className="text-decoration-none text-white ms-4">Películas favoritas</Link >}
+                {token && <Link to={"/favourites"} className="text-decoration-none text-white ms-3">Películas favoritas</Link >}
                 {token && <Link
                     to={"/"}
                 >
-                    <Button onClick={logOut} variant="danger" className='btn-sm mx-3'>Cerrar sesión</Button>
+                    <Button onClick={logOut} variant="danger" className='btn-sm mx-4 my-1'>Cerrar sesión</Button>
                 </Link>}
             </div>
             {(location.pathname === "/" || location.pathname === "/search")
                 ?
-                <div>
+                <div className='home-search-wrapper'>
                     <Link to="/">
                         <FontAwesomeIcon
                             id="homeIcon"

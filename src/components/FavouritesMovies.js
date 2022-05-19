@@ -31,8 +31,8 @@ export default function FavouritesMovies({ token }) {
     return (
         <div className='admin-container'>
             <div>
-                <h4 className='text-white mb-5 fw-bold mx-3'>Favoritos</h4>
-                <Table striped bordered hover variant='dark' responsive>
+                <h4 className='text-white mb-5 fw-bold mx-4'>Favoritos</h4>
+                <Table striped bordered hover variant='dark' className='mx-4' responsive>
                     <thead className='text-white'>
                         <tr>
                             <th>Nombre</th>

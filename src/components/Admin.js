@@ -36,8 +36,8 @@ export default function Admin() {
     return (
         <div className='admin-container'>
             <div>
-                <h4 className='text-white mb-5 fw-bold mx-3'>Usuarios</h4>
-                <Table striped bordered hover variant='dark' responsive>
+                <h4 className='text-white mb-5 fw-bold mx-4'>Usuarios</h4>
+                <Table striped bordered hover variant='dark' responsive className='mx-4'>
                     <thead className='text-white'>
                         <tr>
                             <th>Nombre</th>
