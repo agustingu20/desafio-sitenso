@@ -58,7 +58,7 @@ body {
 
 /* CSS CARDS */
 .movies-card {
-  width: 11rem;
+  width: 12rem;
   margin: 5px;
   background: none;
   border: none;
@@ -67,7 +67,8 @@ body {
 .movies-card-title {
   color: white;
   font-size: 14px;
-  text-align: end;
+  text-align: start;
+  margin-bottom: auto;
 }
 
 /* CSS SEARCH */

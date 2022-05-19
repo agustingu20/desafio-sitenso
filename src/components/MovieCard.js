@@ -1,10 +1,10 @@
-// import { Button } from 'react-bootstrap'
 import axios from 'axios'
 import React from 'react'
-import { Card } from "react-bootstrap"
+import { Button, Card } from "react-bootstrap"
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { fetchMovie } from '../actions'
+import swal from 'sweetalert';
 
 export default function MovieCard({ starWarsMovies, token }) {
     const dispatch = useDispatch()
@@ -15,8 +15,16 @@ export default function MovieCard({ starWarsMovies, token }) {
 
     const favouriteMovie = async (e) => {
         const favouriteMovieName = e.target.value
-        const favorito = await axios.post("/favouritesMovies", { name: JSON.stringify(favouriteMovieName) }, { headers: { "token": `${token}` } })
-        console.log("favorito", favorito)
+        try {
+            await axios.post("/favouritesMovies", { name: JSON.stringify(favouriteMovieName) }, { headers: { "token": `${token}` } })
+            swal("Película añadida correctamente a favoritos", {
+                icon: "success",
+            })
+        } catch (error) {
+            swal("Debe estar logueado para agregar una película a favoritos", {
+                icon: "error",
+            });
+        }
     }
 
     return (
@@ -28,11 +36,10 @@ export default function MovieCard({ starWarsMovies, token }) {
                             <Card.Img variant="top" style={{ height: '12rem' }} src={starWarsMovie.show.image.original} name={`${starWarsMovie.show.name}`} onClick={click} />
                         </Link>
                         <Card.Body className='d-flex justify-content-between px-0'>
-                            {/* <Button variant="danger" className="btn-sm h-75 mx-2">❤</Button> */}
                             <Link className='text-decoration-none' to={`${starWarsMovie.show.name}`}>
                                 <Card.Title className='movies-card-title'>{starWarsMovie.show.name}</Card.Title>
                             </Link>
-                            <button onClick={favouriteMovie} value={`${starWarsMovie.show.name}`}>❤</button>
+                            <Button variant="danger" className="btn-sm mx-1" onClick={favouriteMovie} value={`${starWarsMovie.show.name}`}>❤</Button>
                         </Card.Body>
                     </Card>
                 ))
