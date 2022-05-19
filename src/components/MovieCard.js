@@ -15,15 +15,15 @@ export default function MovieCard({ starWarsMovies, token }) {
 
     const favouriteMovie = async (e) => {
         const favouriteMovieName = e.target.value
-        try {
+        if (token) {
             await axios.post("/favouritesMovies", { name: JSON.stringify(favouriteMovieName) }, { headers: { "token": `${token}` } })
-            swal("Película añadida correctamente a favoritos", {
-                icon: "success",
-            })
-        } catch (error) {
-            swal("Debe estar logueado para agregar una película a favoritos", {
+                .then(swal("Película añadida correctamente a favoritos", {
+                    icon: "success",
+                }))
+        } else {
+            swal("Debe estar logueado para añadir película a favoritos", {
                 icon: "error",
-            });
+            })
         }
     }
 
