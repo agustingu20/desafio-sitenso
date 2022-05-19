@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# Challenge aplicación web para empresa Sitenso :rocket:
+## Objetivo del challenge // Challenge objective
+Desarrollar una aplicación en ReactJS que muestre la información de diferentes películas, en donde la información se obtiene de TV MAZE API. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Develop an app in ReactJS that shows the info of differents movies, where the info obtains from TV MAZE API.
 
-## Available Scripts
+## Requerimientos del challenge // Challenge requirements
 
-In the project directory, you can run:
+✔️ Mostrar los resultados de las películas cuando se realice la búsqueda de las mismas, cuando no se introduzca ninguna búsqueda se deben mostrar con las películas de Star Wars.
+<br />
+✔️ Al hacer click en algún resultado se debe mostrar en una nueva pantalla los datos de la película, una imagen y la calificación de la misma.
+<br />
+✔️ Debe haber un login y una pantalla de registro de nuevos usuarios.
+<br />
+✔️ La pantalla de usuario administrador debe tener un CRUD de los usuarios registrados.
+<br />
+✔️ Se debe listar las películas favoritas según cada usuario.
+<br />
+✔️ El sitio deberá ser responsivo.
+***
+✔️ Shows the results of the movies when the search is done, when there is no search it should show the star wars movies.
+<br />
+✔️ When a result is click it should show a new screen with the movie data, an image and the calification.
+<br />
+✔️ It should be a login and a register section.
+<br />
+✔️ The admin section must have a CRUD of the register users.
+<br />
+✔️ Each user should have a favourite list of movie when they selected them.
+<br />
+✔️ The site must be be responsive.
+<br />
 
-### `npm start`
+## Usuario registrado para obtener TOKEN
+- **Dentro del desarrollo de la aplicación web se realizó el backend en donde los usuarios se registran o loguean para obtener un token. Se tiene un usuario administrador el cual puede acceder al panel admin y poder ver el CRUD de usuarios registrados**
+- **EL usuario admin es: admin@admin.com y pass: admin@1234**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Register user to obtain TOKEN and API web site:
+- **Within the development of the web application, the backend was made where users register or log in to obtain a token. There is an administrator user who can access the admin panel and be able to see the CRUD of registered users**
+- **The admin user is: admin@admin.com and pass: admin@1234**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Instalación
+Tener instalado el paquete [npm](https://www.npmjs.com/)
+<br />
 
-### `npm test`
+### Clonar el repositorio
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+$ git clone https://github.com/agustingu20/desafio-sitenso.git
+$ cd ../path/to/the/file
+$ npm install
+$ npm start
 
-### `npm run build`
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Installation
+Use the package manager [npm](https://www.npmjs.com/)
+<br />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Clone the repository
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+$ git clone https://github.com/agustingu20/desafio-sitenso.git
+$ cd ../path/to/the/file
+$ npm install
+$ npm start
 
-### `npm run eject`
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Autor ✒️
+**Agustín Gómez Urrutia** - [agustingu20](https://github.com/agustingu20)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Librerías 📚
+- Axios
+- Bootstrap
+- React-bootstrap
+- React-router-dom
+- Redux and Redux-thunk
+- SweetAlert
+- FontAwesome
