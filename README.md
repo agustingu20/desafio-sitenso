@@ -35,7 +35,7 @@ Develop an app in ReactJS that shows the info of differents movies, where the in
 - **Dentro del desarrollo de la aplicación web se realizó el backend en donde los usuarios se registran o loguean para obtener un token. Se tiene un usuario administrador el cual puede acceder al panel admin y poder ver el CRUD de usuarios registrados**
 - **EL usuario admin es: admin@admin.com y pass: admin@1234**
 
-## Register user to obtain TOKEN and API web site:
+## Register user to obtain TOKEN
 - **Within the development of the web application, the backend was made where users register or log in to obtain a token. There is an administrator user who can access the admin panel and be able to see the CRUD of registered users**
 - **The admin user is: admin@admin.com and pass: admin@1234**
 
