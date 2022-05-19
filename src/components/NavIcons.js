@@ -21,6 +21,7 @@ export default function NavIcons({ logOut, token, user }) {
                     />
                 </Link>}
                 {user.category === "admin" && <Link to={"/admin"} className="text-decoration-none text-white ms-4">Acceso admin</Link >}
+                {token && <Link to={"/favourites"} className="text-decoration-none text-white ms-4">Películas favoritas</Link >}
                 {token && <Link
                     to={"/"}
                 >

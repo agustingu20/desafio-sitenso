@@ -11,6 +11,7 @@ import { useSelector } from 'react-redux';
 import Admin from './components/Admin';
 import Login from './components/Login';
 import Register from './components/Register';
+import FavouritesMovies from './components/FavouritesMovies';
 
 const localToken = JSON.parse(localStorage.getItem('token'))?.token || "";
 
@@ -54,9 +55,10 @@ function App() {
         <NavIcons logOut={logOut} token={token} user={user} />
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="search" element={<SearchMovie starWarsMovies={starWarsMovies} />} />
+          <Route exact path="search" element={<SearchMovie starWarsMovies={starWarsMovies} token={token} />} />
           <Route exact path="search/:movieName" element={<MovieInfo selectedMovie={selectedMovie} />} />
           {user.category && <Route exact path="/admin" element={<Admin token={token} />} />}
+          {user && <Route exact path="/favourites" element={<FavouritesMovies token={token} />} />}
           {!token && <Route exact path="/login" element={<Login token={token} setToken={setToken} user={user} />} />}
           <Route exact path="/register" element={<Register setToken={setToken} />} />
         </Routes>
