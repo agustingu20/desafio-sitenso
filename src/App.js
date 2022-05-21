@@ -19,6 +19,7 @@ function App() {
 
   const [user, setUser] = useState({})
   const [starWarsMovies, setStarWarsMovies] = useState([])
+  console.log("App ~ starWarsMovies", starWarsMovies)
   const selectedMovie = useSelector((store) => store.movie)
   const [token, setToken] = useState(localToken)
 

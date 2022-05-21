@@ -25,7 +25,7 @@ export default function MovieInfo({ selectedMovie }) {
                             <b>Sinopsis</b>
                         </Card.Title>
                         <Card.Text className='movie-info-summary'>
-                            {`${selectedMovie[0]?.show?.summary.replace(/<[^>]+>/g, "")}`}
+                            {`${selectedMovie[0]?.show?.summary?.replace(/<[^>]+>/g, "")}`}
                         </Card.Text>
                     </Card.Body>
                 </Card>

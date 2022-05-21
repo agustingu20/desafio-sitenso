@@ -39,7 +39,7 @@ export default function MovieCard({ starWarsMovies, token }) {
                 starWarsMovies.map((starWarsMovie) => (
                     <Card className='movies-card' key={`starWarsMovie-${starWarsMovie.show.id}`}  >
                         <Link className='text-decoration-none' to={`${starWarsMovie.show.name}`}>
-                            <Card.Img variant="top" style={{ height: '12rem' }} src={starWarsMovie.show.image.original} name={`${starWarsMovie.show.name}`} onClick={click} />
+                            <Card.Img variant="top" style={{ height: '12rem' }} src={starWarsMovie.show.image?.original} name={`${starWarsMovie.show.name}`} onClick={click} />
                         </Link>
                         <Card.Body className='d-flex justify-content-between px-0'>
                             <Link className='text-decoration-none' to={`${starWarsMovie.show.name}`}>
